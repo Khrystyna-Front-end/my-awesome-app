@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Weather in HTML/CSS</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="header">
+        <form class="row justify-content-center" id="search-form">
+          <div class="col-auto">
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Please enter city"
+              id="search-text-input"
+            />
+          </div>
+          <div class="col-auto">
+            <button type="submit" class="btn btn-info">Search</button>
+          </div>
+          <div class="col-auto">
+            <button class="btn btn-success w-100" id="current-location-button">
+              Current
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <div class="main">
+        <div class="row first">
+          <div class="col-6 text-start">
+            <div class="container">
+              <div class="row">
+                <div class="col-2">
+                  <img src="images/d400.gif" alt="weather-icon1" />
+                </div>
+                <div class="col-4 units-temp">
+                  <h2 id="side-header"></h2>
+                  <div class="units">
+                    <a href="#" id="cels">°C |</a>
+                    <!-- <a href="#" id="fahr">°F</a> -->
+                  </div>
+                </div>
+                <div class="col-6">
+                  <p id="desc">
+                    <br />
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 text-end">
+            <h1 id="main-heading"></h1>
+            <p id="current-time"></p>
+            <p id="weather-description"></p>
+          </div>
+        </div>
+
+       
+
+        <div class="row justify-content-center second">
+          <div class="col-2 weather-items">
+            <p>
+              3:00<br />
+              Fri
+            </p>
+            <img src="images/d410.gif" alt="weather-icon3" /><br />
+            <p>3.....-3</p>
+          </div>
+          <div class="col-2 weather-items">
+            <p>
+              6:00<br />
+              Sat
+            </p>
+            <img
+              src="images/d412.gif"
+              alt="weather-icon4"
+              width="40px"
+              height="40px"
+            /><br />
+            <p>-1.....-8</p>
+          </div>
+          <div class="col-2 weather-items">
+            <p>
+              9:00<br />
+              Sun
+            </p>
+            <img
+              src="images/d300.gif"
+              alt="weather-icon2"
+              width="40px"
+              height="40px"
+            /><br />
+            <p>6.....-11</p>
+          </div>
+          <div class="col-2 weather-items">
+            <p>
+              12:00<br />
+              Mon
+            </p>
+            <img
+              src="images/d300.gif"
+              alt="weather-icon2"
+              width="40px"
+              height="40px"
+            /><br />
+            <p>-4.....-7</p>
+          </div>
+          <div class="col-2 weather-items">
+            <p>
+              15:00<br />
+              Tue
+            </p>
+            <img
+              src="images/d400.gif"
+              alt="weather-icon1"
+              width="40px"
+              height="40px"
+            /><br />
+            <p>0.....-3</p>
+          </div>
+        </div>
+      </div>
+      <div class = "footer">
+        <div class="row justify-content-center third">
+          <div class="col-auto">
+            <h6><a href = "#">GitHub</a> code by Khrystyna Karieva</h5>
+          </div>
+       </div>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
