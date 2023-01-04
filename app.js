@@ -21,7 +21,7 @@ function showWeatherDescription(response) {
 }
 
 function search(city) {
-  let apiKey = "5da7b2dc058f07286fea39c4cee516a3";
+  let apiKey = "93d43dfe3b4a950e5b187e5dc313705e";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(showWeatherDescription);
 }
@@ -32,7 +32,6 @@ function handleSearch(event) {
   let city = searchInput.value;
   search(city);
 }
-date;
 
 function formatDate(timestamp) {
   let date = new Date(timestamp);
@@ -59,7 +58,7 @@ function formatDate(timestamp) {
 }
 
 function showPosition(position) {
-  let apiKey = "5da7b2dc058f07286fea39c4cee516a3";
+  let apiKey = "93d43dfe3b4a950e5b187e5dc313705e";
   let unit = "metric";
   let lat = position.coords.latitude;
   let lon = position.coords.longitude;
@@ -103,5 +102,4 @@ fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
 let celsiusLink = document.querySelector("#cels");
 celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
-changeCurrentTime();
 search("London");
