@@ -57,6 +57,14 @@ function formatDate(timestamp) {
   return (currentTime.innerHTML = `${day} ${hours} : ${minutes}`);
 }
 
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+  return days[day];
+}
+
 function showPosition(position) {
   let apiKey = "93d43dfe3b4a950e5b187e5dc313705e";
   let unit = "metric";
