@@ -3,6 +3,7 @@ body {
   margin: 0 auto;
   font-family: Georgia, "Times New Roman", Times, serif;
   color: rgb(27, 7, 46);
+  background-color: #f9f7fe;
 }
 
 ul {
@@ -29,6 +30,7 @@ a {
   max-width: 700px;
   border: 1px solid rgb(27, 7, 46);
   border-radius: 25px;
+  background-color: #fff;
 }
 
 .header {
