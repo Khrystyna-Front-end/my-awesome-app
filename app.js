@@ -32,9 +32,10 @@ function handleSearch(event) {
   let city = searchInput.value;
   search(city);
 }
+date;
 
 function formatDate(timestamp) {
-  let now = new Date(timestamp);
+  let date = new Date(timestamp);
   let days = [
     "Sunday",
     "Monday",
@@ -44,12 +45,12 @@ function formatDate(timestamp) {
     "Friday",
     "Saturday",
   ];
-  let day = days[now.getDay()];
-  let hours = now.getHours();
+  let day = days[date.getDay()];
+  let hours = date.getHours();
   if (hours < 10) {
     hours = "0" + hours;
   }
-  let minutes = now.getMinutes();
+  let minutes = date.getMinutes();
   if (minutes < 10) {
     minutes = "0" + minutes;
   }
