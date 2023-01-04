@@ -4,12 +4,12 @@ function showWeatherDescription(response) {
   let temperatureElement = document.querySelector("#side-header");
   let iconElement = document.querySelector("#icon");
   let dateElement = document.querySelector("#current-time");
+  let humidity = document.querySelector("#humidity");
+  let wind = document.querySelector("#wind");
   dateElement.innerHTML = formatDate(response.data.dt * 1000);
   celsiusTemperature = response.data.main.temp;
   temperatureElement.innerHTML = Math.round(celsiusTemperature);
-  let humidity = document.querySelector("#humidity");
   humidity.innerHTML = `Humidity:  ${response.data.main.humidity} %,`;
-  let wind = document.querySelector("#wind");
   wind.innerHTML = `Wind:${response.data.wind.speed} km/h`;
   iconElement.setAttribute(
     "src",
