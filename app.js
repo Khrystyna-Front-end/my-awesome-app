@@ -116,13 +116,7 @@ function dailyForecast(response) {
   let minTemperature = document.querySelector("#min-temperature");
   let maxTemperature = document.querySelector("#max-temperature");
   let iconElement = document.querySelector("#weather-icon");
-
-  // let date = new Date();
-  // let day = date.getDay();
-  // let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-  // formatDay();
-
-  minTemperature = response.data.main.temp.min;
+  weatherDay = minTemperature = response.data.main.temp.min;
   maxTemperature = response.data.main.temp.max;
 
   // weatherDay.innerHTML = ${};
@@ -135,7 +129,11 @@ function dailyForecast(response) {
           <div class="col-2 weather-items">
             <p id="weather-day">Fri</p>
             <img src="images/d410.gif" alt="weather-icon3" id = "weather-icon"/><br />
-            <p id="weather-temperature"><span id = "max-temperature">3</span>.....<span id = "min-temperature">-3</span></p>
+            <p id="weather-temperature"><span id = "max-temperature">${Math.round(
+              maxTemperature
+            )}</span>.....<span id = "min-temperature">${Math.round(
+    minTemperature
+  )}</span></p>
           </div>
 </div>`;
 }
@@ -143,12 +141,8 @@ function dailyForecast(response) {
 
 function showDailyForecast(coord) {
   let apiKey = "93d43dfe3b4a950e5b187e5dc313705e";
-  let lat = response.data.coord.lat;
-  let lon = response.data.coord.lon;
-
-  let apiUrl = `https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${lon}&appid=${apiKey}`;
-
+  let apiUrl = `https://api.openweathermap.org/data/3.0/onecall?lat=${coord.lat}&lon=${coord.lon}&appid=${apiKey}`;
   axios.get(apiUrl).then(dailyForecast);
 }
-console.log(coord);
+
 search("London");
