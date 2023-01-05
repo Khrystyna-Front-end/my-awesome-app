@@ -19,14 +19,12 @@ function showWeatherDescription(response) {
   description.innerHTML = response.data.weather[0].description;
   h1.innerHTML = response.data.name;
   showDailyForecast(response.data.coord);
-  console.log(response);
 }
 
 function search(city) {
   let apiKey = "93d43dfe3b4a950e5b187e5dc313705e";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(showWeatherDescription);
-  console.log(apiUrl);
 }
 
 function handleSearch(event) {
@@ -115,15 +113,7 @@ celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
 function dailyForecast(response) {
   let weatherForecast = document.querySelector("#weather-forecast");
-  // let weatherDay = document.querySelector("#weather-day");
-  // let minTemperature = document.querySelector("#min-temperature");
-  // let maxTemperature = document.querySelector("#max-temperature");
-  // let iconElement = document.querySelector("#weather-icon");
   let forecast = response.data.daily;
-  // weatherDay.innerHTML = response.data.daily.dt;
-  // iconElement.innerHTML = response.data.daily.weather[0].icon;
-  // minTemperature = response.data.daily.temp.min;
-  // maxTemperature.innerHTML = response.data.daily.temp.max;
   let forecastHTML = `<div class="row justify-content-center second">`;
   forecast.forEach(function (forecastDay, index) {
     if (index < 5) {
