@@ -110,30 +110,28 @@ fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
 let celsiusLink = document.querySelector("#cels");
 celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
-
-
 function dailyForecast(response) {
-let weatherForecast = document.querySelector("#weather-forecast");
-let weatherDay = document.querySelector("#weather-day");
-let minTemperature = document.querySelector("#min-temperature");
-let maxTemperature  = document.querySelector("#max-temperature");
-let iconElement = document.querySelector("#weather-icon");
+  let weatherForecast = document.querySelector("#weather-forecast");
+  let weatherDay = document.querySelector("#weather-day");
+  let minTemperature = document.querySelector("#min-temperature");
+  let maxTemperature = document.querySelector("#max-temperature");
+  let iconElement = document.querySelector("#weather-icon");
 
-// let date = new Date();
-// let day = date.getDay();
-// let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-// formatDay();
+  // let date = new Date();
+  // let day = date.getDay();
+  // let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+  // formatDay();
 
-minTemperature = response.data.main.temp.min;
-maxTemperature = response.data.main.temp.max;
+  minTemperature = response.data.main.temp.min;
+  maxTemperature = response.data.main.temp.max;
 
-weatherDay.innerHTML = ${};
- iconElement.setAttribute(
+  // weatherDay.innerHTML = ${};
+  iconElement.setAttribute(
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
-weatherForecast.innerHTML = `<div class="row justify-content-center second">
+  weatherForecast.innerHTML = `<div class="row justify-content-center second">
           <div class="col-2 weather-items">
             <p id="weather-day">Fri</p>
             <img src="images/d410.gif" alt="weather-icon3" id = "weather-icon"/><br />
@@ -141,14 +139,13 @@ weatherForecast.innerHTML = `<div class="row justify-content-center second">
           </div>
 </div>`;
 }
-</div>;
-
+// </div>;
 
 function showDailyForecast() {
   let apiKey = "93d43dfe3b4a950e5b187e5dc313705e";
 
   let apiUrl = `https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${lon}&exclude={part}&appid=${apiKey}`;
-  
+
   axios.get(apiUrl).then(dailyForecast);
 }
 search("London");
