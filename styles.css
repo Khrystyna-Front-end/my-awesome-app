@@ -62,12 +62,12 @@ a {
 }
 
 .first {
-  padding-top: 50px;
+  padding-top: 40px;
   margin-top: 10px;
 }
 .second {
   text-align: center;
-  margin: 60px auto;
+  margin: 40px auto;
 }
 
 .weather-items {
