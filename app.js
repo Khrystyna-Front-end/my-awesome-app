@@ -147,9 +147,8 @@ function showDailyForecast(coord) {
   let lon = response.data.coord.lon;
 
   let apiUrl = `https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${lon}&appid=${apiKey}`;
-  console.log(apiUrl);
-  axios.get(apiUrl).then(dailyForecast);
 
-  console.log(coord);
+  axios.get(apiUrl).then(dailyForecast);
 }
+console.log(coord);
 search("London");
