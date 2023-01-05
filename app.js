@@ -141,11 +141,15 @@ function dailyForecast(response) {
 }
 // </div>;
 
-function showDailyForecast() {
+function showDailyForecast(coord) {
   let apiKey = "93d43dfe3b4a950e5b187e5dc313705e";
+  let lat = response.data.coord.lat;
+  let lon = response.data.coord.lon;
 
-  let apiUrl = `https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${lon}&exclude={part}&appid=${apiKey}`;
-
+  let apiUrl = `https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${lon}&appid=${apiKey}`;
+  console.log(apiUrl);
   axios.get(apiUrl).then(dailyForecast);
+
+  console.log(coord);
 }
 search("London");
