@@ -5,6 +5,7 @@ body {
   color: rgb(27, 7, 46);
   background-color: #f9f7fe;
   background-image: url("https://i.pinimg.com/originals/f4/7a/60/f47a60398ec095916d7d5598d87d8966.jpg");
+  /* opacity: 0.75; */
 }
 
 ul {
@@ -32,7 +33,7 @@ a {
   border: 1px solid rgb(27, 7, 46);
   border-radius: 25px;
   background-color: #fff;
-  opacity: 0.75;
+  opacity: 0.9;
 }
 
 .header {
