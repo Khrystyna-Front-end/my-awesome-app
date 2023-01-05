@@ -10,7 +10,7 @@ function showWeatherDescription(response) {
   celsiusTemperature = response.data.main.temp;
   temperatureElement.innerHTML = Math.round(celsiusTemperature);
   humidity.innerHTML = `Humidity:  ${response.data.main.humidity} %,`;
-  wind.innerHTML = `Wind:${response.data.wind.speed} km/h`;
+  wind.innerHTML = `Wind:${Math.round(response.data.wind.speed)} m/s`;
   iconElement.setAttribute(
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
